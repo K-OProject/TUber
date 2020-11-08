@@ -7,6 +7,7 @@ const dotenv = require("dotenv");
 const verify = require("./VerificationToken.js");
 const nodemailer = require("nodemailer");
 const smtpTransport = require("nodemailer-smtp-transport");
+const { pass, emailAccount } = require("./googleAcc.js");
 
 dotenv.config();
 
@@ -31,15 +32,45 @@ router.post("/register", async (req, res) => {
     address: req.body.address,
     phoneNumber: req.body.phoneNumber,
     imgUrl: req.body.imgUrl,
-  }).then((user) => res.json(user));
+  }).then((user) => {
+    nodemailer.createTestAccount((err, email) => {
+      var transporter = nodemailer.createTransport(
+        smtpTransport({
+          service: "gmail",
+          port: 465,
+          secure: false,
+          host: "smtp.gmail.com",
+          auth: {
+            user: emailAccount,
+            pass: pass,
+          },
+          tls: {
+            rejectUnauthorized: false,
+          },
+        })
+      );
+
+      let mailOptions = {
+        from: "",
+        to: `${req.body.email}`,
+        subject: "TUber new account",
+        text: `Hey Mr/Mrs ${req.body.name}, we much appreciate you joining us for the ride.
+        You made the right choice you'll never be late again we can guaranty that.
+        we look forward to your first ride with us we can't wait to have you in one of our cars  `,
+      };
+      transporter.sendMail(mailOptions, (err, info) => {
+        res.json(user);
+      });
+    });
+  });
 });
 router.post("/login", async (req, res) => {
   const user = await Users.findOne({ where: { email: req.body.email } });
-  if (!user) return res.status(400).send("Email is not found");
+  if (!user) return res.send({"status" : 404})
   const validPass = await bcrypt.compare(req.body.password, user.password);
-  if (!validPass) return res.status(400).send("Invalid password ");
+  if (!validPass) return res.send({"status" : 500})
   const token = jwt.sign({ id: user.id }, process.env.SECRET_TOKEN);
-  res.header("auth_token", token).send(token);
+  res.header('auth_token',token).send({'token':token , 'id':user.id})
 });
 
 router.post("/send", async (req, res) => {
@@ -52,8 +83,8 @@ router.post("/send", async (req, res) => {
           secure: false,
           host: "smtp.gmail.com",
           auth: {
-            user: "",
-            pass: "",
+            user: emailAccount,
+            pass: pass,
           },
           tls: {
             rejectUnauthorized: false,

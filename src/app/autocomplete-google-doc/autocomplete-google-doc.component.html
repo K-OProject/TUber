@@ -1,5 +1,5 @@
 <div class="row my-5 d-flex flex-center">
-  <div class="col-md-6">
+  <div class="col-sm-6">
     <agm-map
       #map
       [mapTypeId]="'terrain'"
@@ -9,7 +9,7 @@
       style="height: 300px"
     >
       <agm-direction
-        *ngIf="destinationPlaceId != undefined"
+        *ngIf="showDirections"
         [origin]="originPlaceId"
         [destination]="destinationPlaceId"
         [travelMode]="travelMode"
@@ -35,7 +35,7 @@
     />
   </div>
   <div class="row">
-    <div class="col-md-12 d-flex flex-center">
+    <div class="col-sm-12 d-flex flex-center">
       <button
         mdbBtn
         color="black"
@@ -47,4 +47,11 @@
       </button>
     </div>
   </div>
+</div>
+<div class="col-sm-8 offset-sm-2">
+  <app-cars-type
+    *ngIf="showCarType"
+    [timeLengthInput]="rideTime"
+    [distanceInput]="rideDistance"
+  ></app-cars-type>
 </div>

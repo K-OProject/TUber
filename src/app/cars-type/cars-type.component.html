@@ -1,83 +1,134 @@
-<!-- Card deck -->
 <div class="card-deck">
-  <!-- Card -->
-  <div class="card mb-4">
-    <!--Card image-->
-    <div class="view overlay">
-      <img
-        class="card-img-top"
-        src="https://www.binbincar.tn/Content/uploads/201801/image20180129_135457_237159.jpg"
+  <!-- Card 1 -------------------------------------------------------------------------------->
+  <mdb-card>
+    <div class="view overlay waves-light" mdbWavesEffect>
+      <!-- Card img -->
+      <mdb-card-img
+        src="https://firebasestorage.googleapis.com/v0/b/tuber-31ec5.appspot.com/o/kaa6fxaxrn?alt=media&token=55844f1d-2de8-4476-b100-fb4ecb62559d"
         alt="Card image cap"
-      />
-      <a href="#!">
+      ></mdb-card-img>
+      <a>
         <div class="mask rgba-white-slight"></div>
       </a>
     </div>
-
     <!--Card content-->
-    <div class="card-body">
+    <mdb-card-body>
       <!--Title-->
-      <h4 class="card-title">Normal</h4>
+      <mdb-card-title class="text-center">
+        <h4>Basic Car</h4>
+      </mdb-card-title>
       <!--Text-->
-      <p class="card-text">Basic price , get you ride now!</p>
-      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-      <button type="button" class="btn btn-black btn-md">Confirm</button>
-    </div>
-  </div>
-  <!-- Card -->
+      <mdb-card-text class="text-center">
+        A comfortable car that will take you from point A to point B
+      </mdb-card-text>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <mdb-icon fab icon="algolia"> </mdb-icon>
+            {{ timeLengthInput.text.slice(0, -4) }}
+          </div>
+          <div class="col-sm">
+            <mdb-icon fas icon="car-alt"></mdb-icon> {{ distanceInput.text }}
+          </div>
+          <div class="col-sm">
+            <mdb-icon fas icon="money-check-alt"></mdb-icon>
+            {{ BaseCarPrice }} DT
+          </div>
+        </div>
+        <br />
+      </div>
+      <div class="text-center">
+        <a href="#" mdbBtn color="black" mdbWavesEffect>Basic</a>
+      </div>
+    </mdb-card-body>
+  </mdb-card>
 
-  <!-- Card -->
-  <div class="card mb-4">
-    <!--Card image-->
-    <div class="view overlay">
-      <img
-        class="card-img-top"
-        src="https://www.canadadrives.ca/uploads/2020/1/5e2ba187e83ef.jpg"
+  <!-- Card 2 -------------------------------------------------------------------------------->
+  <mdb-card>
+    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+      <!-- Card img -->
+      <mdb-card-img
+        src="https://firebasestorage.googleapis.com/v0/b/tuber-31ec5.appspot.com/o/hrvm939g7ba?alt=media&token=a7427ad3-b1ef-4bee-8b38-269a3eba3bb2"
         alt="Card image cap"
-      />
-      <a href="#!">
-        <div class="mask rgba-white-slight"></div>
+      ></mdb-card-img>
+      <a>
+        <div class="mask"></div>
       </a>
     </div>
-
     <!--Card content-->
-    <div class="card-body">
+    <mdb-card-body>
       <!--Title-->
-      <h4 class="card-title">Comfort</h4>
-      <!--Text-->
-      <p class="card-text">Medium price, get yourconmfortable ride now!</p>
-      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-      <button type="button" class="btn btn-black btn-md">Confirm</button>
-    </div>
-  </div>
-  <!-- Card -->
+      <mdb-card-title class="text-center">
+        <h4>High End Car</h4>
+      </mdb-card-title>
 
-  <!-- Card -->
-  <div class="card mb-4">
-    <!--Card image-->
-    <div class="view overlay">
-      <img
-        class="card-img-top"
-        src="https://luxurylaunches.com/wp-content/uploads/2017/05/Stock-image-mercedes-Uber-bonus-1170x720.jpg"
+      <!--Text-->
+      <mdb-card-text class="text-center">
+        Mercedes, BMW and Audi, only selected cars from our catalog
+      </mdb-card-text>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <mdb-icon fab icon="algolia"> </mdb-icon>
+            {{ timeLengthInput.text.slice(0, -4) }}
+          </div>
+          <div class="col-sm">
+            <mdb-icon fas icon="car-alt"></mdb-icon> {{ distanceInput.text }}
+          </div>
+          <div class="col-sm">
+            <mdb-icon fas icon="money-check-alt"></mdb-icon>
+            {{ HighEndCarPrice }} DT
+          </div>
+        </div>
+        <br />
+      </div>
+      <div class="text-center">
+        <a href="#" mdbBtn color="black" mdbWavesEffect>High end</a>
+      </div>
+    </mdb-card-body>
+  </mdb-card>
+
+  <!-- Card 3 -------------------------------------------------------------------------------->
+  <mdb-card>
+    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+      <!-- Card img -->
+      <mdb-card-img
+        src="https://firebasestorage.googleapis.com/v0/b/tuber-31ec5.appspot.com/o/d9v2u6qfbqw?alt=media&token=37a552ac-f80d-4af7-8513-0fe22ce8fc4d"
         alt="Card image cap"
-      />
-      <a href="#!">
-        <div class="mask rgba-white-slight"></div>
+      ></mdb-card-img>
+      <a>
+        <div class="mask"></div>
       </a>
     </div>
-
     <!--Card content-->
-    <div class="card-body">
+    <mdb-card-body>
       <!--Title-->
-      <h4 class="card-title">Luxury</h4>
+      <mdb-card-title class="text-center">
+        <h4>Premium Service</h4>
+      </mdb-card-title>
       <!--Text-->
-      <p class="card-text">
-        High price , luxurious experience feel like a boss!
-      </p>
-      <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-      <button type="button" class="btn btn-black btn-md">Confirm</button>
-    </div>
-  </div>
-  <!-- Card -->
+      <mdb-card-text class="text-center">
+        Limo car with TV and snacks, with specially trained drivers.
+      </mdb-card-text>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <mdb-icon fab icon="algolia"></mdb-icon>
+            {{ timeLengthInput.text.slice(0, -4) }}
+          </div>
+          <div class="col-sm">
+            <mdb-icon fas icon="car-alt"></mdb-icon> {{ distanceInput.text }}
+          </div>
+          <div class="col-sm">
+            <mdb-icon fas icon="money-check-alt"></mdb-icon>
+            {{ PremiumCarPrice }} DT
+          </div>
+        </div>
+        <br />
+      </div>
+      <div class="text-center">
+        <a href="#" mdbBtn color="black" mdbWavesEffect>Premium</a>
+      </div>
+    </mdb-card-body>
+  </mdb-card>
 </div>
-<!-- Card deck -->
