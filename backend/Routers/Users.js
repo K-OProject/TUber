@@ -35,11 +35,11 @@ router.post("/register", async (req, res) => {
 });
 router.post("/login", async (req, res) => {
   const user = await Users.findOne({ where: { email: req.body.email } });
-  if (!user) return res.status(400).send("Email is not found");
+  if (!user) return res.send({"status" : 404})
   const validPass = await bcrypt.compare(req.body.password, user.password);
-  if (!validPass) return res.status(400).send("Invalid password ");
+  if (!validPass) return res.send({"status" : 500})
   const token = jwt.sign({ id: user.id }, process.env.SECRET_TOKEN);
-  res.header("auth_token", token).send(token);
+  res.header('auth_token',token).send({'token':token , 'id':user.id})
 });
 
 router.post("/send", async (req, res) => {

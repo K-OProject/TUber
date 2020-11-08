@@ -25,3 +25,16 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+##Goal of the project
+
+This project is designed to help you get going fast, find you a taxi depending on your needs and choices. you'll be able to choose the starting point and the destination
+
+## Tech used to build the Project
+
+-Nodejs
+-Javascript
+-Angular framework
+-Express
+-MySQL
