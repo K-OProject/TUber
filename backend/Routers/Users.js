@@ -54,7 +54,7 @@ router.post("/register", async (req, res) => {
         from: "",
         to: `${req.body.email}`,
         subject: "TUber new account",
-        text: `Hey Mr/Mrs ${req.body.name}, we much appreciate you joining us for the ride.
+        text: `Hey Mr/Mrs ${req.body.firstName}, we much appreciate you joining us for the ride.
         You made the right choice you'll never be late again we can guaranty that.
         we look forward to your first ride with us we can't wait to have you in one of our cars  `,
       };

@@ -106,13 +106,7 @@
         downloadURL | async
       }}</a>
       <p></p>
-      <button
-        type="submit"
-        routerLink="/login"
-        [disabled]="f.invalid"
-        mdbBtn
-        color="black"
-      >
+      <button type="submit" [disabled]="f.invalid" mdbBtn color="black">
         Register <i class="fas fa-sign-in-alt"></i>
       </button>
     </form>

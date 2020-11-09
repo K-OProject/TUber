@@ -15,7 +15,7 @@ export class NavBarComponent implements OnInit {
     }
   }
   clearStorage() {
-    //loggeddin = false
+    //logdin = false
     localStorage.clear();
     location.reload();
   }
