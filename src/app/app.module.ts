@@ -18,6 +18,7 @@ import { googleMapsAPIKey } from '../../api/googleMapsAPI';
 import { AutocompleteGoogleDocComponent } from './autocomplete-google-doc/autocomplete-google-doc.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; //import this in the app module !!!important
 import { apiKey, authDomain, projectId, storageBucket } from '../firebase';
+import { JwtModule } from '@auth0/angular-jwt';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -45,6 +46,9 @@ const routes: Routes = [
       authDomain: authDomain,
       projectId: projectId,
       storageBucket: storageBucket,
+    }),
+    JwtModule.forRoot({
+      config: { tokenGetter: () => localStorage.getItem('token') },
     }),
     AngularFireStorageModule,
     HttpClientModule,

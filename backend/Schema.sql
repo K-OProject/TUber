@@ -7,7 +7,8 @@ CREATE TABLE validations (
     driver_id INT NOT NULL ,
     status VARCHAR(20) NOT NULL,
     PRIMARY KEY (id) 
-)
+);
+
 CREATE TABLE requests (
     id INT NOT NULL AUTO_INCREMENT,
     request VARCHAR(30) NOT NULL,
