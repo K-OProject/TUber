@@ -46,7 +46,9 @@ const routes: Routes = [
       authDomain: authDomain,
       projectId: projectId,
       storageBucket: storageBucket,
-      JwtModule.forRoot({config:{tokenGetter:()=>localStorage.getItem('token')}})
+    }),
+    JwtModule.forRoot({
+      config: { tokenGetter: () => localStorage.getItem('token') },
     }),
     AngularFireStorageModule,
     HttpClientModule,

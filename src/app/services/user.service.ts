@@ -8,12 +8,16 @@ const baseUrl = 'http://localhost:3000/users/';
   providedIn: 'root',
 })
 export class UserService {
+  //declare the observable
   constructor(private http: HttpClient) {}
 
   createLogin(data): Observable<any> {
     return this.http.post(baseUrl + 'login', data);
   }
 
+  /*  loggedInStatusChange(loginStatus): Observable<boolean> {
+    return !loginStatus;
+  } */
   createRegister(data): Observable<any> {
     let obj = {
       address: data.address,
@@ -32,4 +36,6 @@ export class UserService {
   sendEmail(data): Observable<any> {
     return this.http.post(baseUrl + 'send', data);
   }
+
+  //function of the observable
 }
