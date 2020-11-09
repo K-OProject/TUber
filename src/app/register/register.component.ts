@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import {
   AngularFireStorage,
@@ -23,7 +23,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private fileStorage: AngularFireStorage,
-    private UserService: UserService
+    private UserService: UserService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -51,6 +52,7 @@ export class RegisterComponent implements OnInit {
     this.UserService.createRegister(f.value).subscribe(
       (res) => {
         console.log(res);
+        this.router.navigateByUrl('/');
       },
       (error) => {
         console.log(error);

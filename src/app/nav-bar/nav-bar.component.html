@@ -15,17 +15,19 @@
     <!-- Links -->
 
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link waves-light" mdbWavesEffect>Request a ride</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" mdbWavesEffect routerLink="/login"
-          >Signin</a
+      <li *ngIf="loggedIn" class="nav-item active">
+        <a class="nav-link waves-light" mdbWavesEffect (click)="clearStorage()"
+          >Log Out</a
         >
       </li>
-      <li class="nav-item">
+      <li *ngIf="!loggedIn" class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect routerLink="/login"
+          >Sign In</a
+        >
+      </li>
+      <li *ngIf="!loggedIn" class="nav-item">
         <a class="nav-link waves-light" mdbWavesEffect routerLink="/register"
-          >Signup</a
+          >Sign Up</a
         >
       </li>
     </ul>
